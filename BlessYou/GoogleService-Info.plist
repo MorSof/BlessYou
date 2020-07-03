@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>848317755245-ep8f0upftftbbeeu2jd9bqineoog9o9m.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.848317755245-ep8f0upftftbbeeu2jd9bqineoog9o9m</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDP7W2V54mSCsuTEbPx7nfMlxldS2_JBEk</string>
+	<key>GCM_SENDER_ID</key>
+	<string>848317755245</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>BlessYou</string>
+	<key>PROJECT_ID</key>
+	<string>blessyou-f79cf</string>
+	<key>STORAGE_BUCKET</key>
+	<string>blessyou-f79cf.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:848317755245:ios:e6150718164bd9c510f464</string>
+	<key>DATABASE_URL</key>
+	<string>https://blessyou-f79cf.firebaseio.com</string>
+</dict>
+</plist>

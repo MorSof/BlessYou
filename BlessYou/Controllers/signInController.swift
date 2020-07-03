@@ -8,21 +8,27 @@
 
 import UIKit
 import GoogleSignIn
+import Firebase
+import FirebaseCore
+import FirebaseFirestore
 
-class signInController: UIViewController, GIDSignInDelegate {
+class signInController: UIViewController, GIDSignInDelegate, SignInProtocol {
 
     @IBOutlet weak var BTN_sign_in: GIDSignInButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         GIDSignIn.sharedInstance().delegate = self
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         googleSignConf()
     }
     
     @IBAction func onSignIn(_ sender: GIDSignInButton) {
         googleSignConf()
-
     }
+    
     @IBAction func didTapSignOut(_ sender: AnyObject) {
       GIDSignIn.sharedInstance().signOut()
     }
@@ -44,7 +50,7 @@ class signInController: UIViewController, GIDSignInDelegate {
         }
         return
       }
-      // Perform any operations on signed in user here.
+
         UserGoogle.userId = user.userID                  // For client-side use only!
         UserGoogle.idToken = user.authentication.idToken // Safe to send to the server
         UserGoogle.fullName = user.profile.name
@@ -52,22 +58,43 @@ class signInController: UIViewController, GIDSignInDelegate {
         UserGoogle.familyName = user.profile.familyName
         UserGoogle.email = user.profile.email
         print(UserGoogle.familyName)
-        goHome()
-
+        FireStore.fetchTodayBirthdays(signInController: self)
+        
     }
     
     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!,
               withError error: Error!) {
       // Perform any operations when the user disconnects from app here.
-      // ...
+        print("signing out")
+        goToSignIn()
     }
     
     
     //------------------------------------------------------------------
     
     
+    
+    func onFetchedBirthdaysSuccess(birthdaysArr: Array<Any>) {
+        if birthdaysArr.isEmpty{
+            print("Empty Birthdays")
+            goHome()
+        }
+        else{
+            print(" Not Empty Birthdays (Good!)")
+        }
+    }
+    
+    func onFailure(error: Error?) {
+        
+    }
+    
      public func goHome(){
         self.performSegue(withIdentifier: "HomeTransition", sender: self)
+    }
+    
+    public func goToSignIn(){
+        self.performSegue(withIdentifier: "signInTransition", sender: self)
+
     }
     
     //MARK: Navigation
@@ -77,6 +104,5 @@ class signInController: UIViewController, GIDSignInDelegate {
         }
     }
     
-
 }
 

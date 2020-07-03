@@ -8,27 +8,39 @@
 
 import UIKit
 import GoogleSignIn
+import UserNotifications
 
 class homeController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
     }
     
 
     @IBAction func didTapSignOut(_ sender: AnyObject) {
+        print("here")
         GIDSignIn.sharedInstance().signOut()
         goToSignIn()
    }
-
-    @IBAction func onSubscribe(_ sender: Any) {
+    
+    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!,
+              withError error: Error!) {
+      // Perform any operations when the user disconnects from app here.
+        print("signing out")
         goToSignIn()
     }
     
-    public func goToSignIn(){
+    @IBAction func onSubscribe(_ sender: Any) {
+        goSubscription()
+    }
+    
+    public func goSubscription(){
         self.performSegue(withIdentifier: "SubscribeTransition", sender: self)
+    }
+    
+    public func goToSignIn(){
+        self.performSegue(withIdentifier: "signInTransition", sender: self)
     }
     
     //MARK: Navigation
@@ -40,3 +52,5 @@ class homeController: UIViewController {
     
     
 }
+
+

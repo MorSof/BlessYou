@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tjK-xY-LB5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -180,7 +180,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FLl-Ws-7hp">
-                                <rect key="frame" x="97" y="217" width="220" height="34"/>
+                                <rect key="frame" x="97" y="192" width="220" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="220" id="AyJ-nM-3FB"/>
                                     <constraint firstAttribute="height" constant="34" id="JdI-74-JNT"/>
@@ -189,7 +189,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Person Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0E6-Ck-CVH">
-                                <rect key="frame" x="97" y="199" width="220" height="18"/>
+                                <rect key="frame" x="97" y="174" width="220" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="220" id="uWZ-J1-Bah"/>
                                 </constraints>
@@ -198,7 +198,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date Of Birth" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Uh-0J-Xte">
-                                <rect key="frame" x="97" y="296" width="220" height="18"/>
+                                <rect key="frame" x="97" y="256" width="220" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="220" id="g2C-dK-yKa"/>
                                 </constraints>
@@ -207,13 +207,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="xfH-To-TXR">
-                                <rect key="frame" x="0.0" y="314" width="414" height="216"/>
-                                <connections>
-                                    <action selector="onDateChanged:" destination="tjK-xY-LB5" eventType="valueChanged" id="UQy-bV-AQr"/>
-                                </connections>
+                                <rect key="frame" x="0.0" y="274" width="414" height="216"/>
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Relation Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nsT-by-uGr">
-                                <rect key="frame" x="97" y="560" width="220" height="18"/>
+                                <rect key="frame" x="97" y="520" width="220" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="220" id="UAE-c3-E6r"/>
                                 </constraints>
@@ -222,33 +219,43 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kol-7H-OAp">
-                                <rect key="frame" x="0.0" y="578" width="414" height="216"/>
+                                <rect key="frame" x="0.0" y="538" width="414" height="216"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="Family" value="YES"/>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="Freind" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZCG-UH-3BF">
+                                <rect key="frame" x="149" y="754" width="116" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Subscribe!"/>
+                                <connections>
+                                    <action selector="onSubscribe:" destination="tjK-xY-LB5" eventType="touchUpInside" id="L2k-6H-VrI"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="6lP-rR-LVp" firstAttribute="top" secondItem="abq-x2-iyQ" secondAttribute="top" constant="50" id="27A-xd-je9"/>
                             <constraint firstItem="6lP-rR-LVp" firstAttribute="centerX" secondItem="2fR-QO-msW" secondAttribute="centerX" id="3M6-DP-saJ"/>
+                            <constraint firstItem="ZCG-UH-3BF" firstAttribute="top" secondItem="Kol-7H-OAp" secondAttribute="bottom" id="8SF-Nc-aIc"/>
                             <constraint firstItem="abq-x2-iyQ" firstAttribute="trailing" secondItem="Kol-7H-OAp" secondAttribute="trailing" id="9W6-u4-twC"/>
                             <constraint firstItem="26N-yL-5HZ" firstAttribute="leading" secondItem="abq-x2-iyQ" secondAttribute="leading" constant="30" id="Ajl-AZ-ZUZ"/>
                             <constraint firstItem="Kol-7H-OAp" firstAttribute="leading" secondItem="abq-x2-iyQ" secondAttribute="leading" id="C3v-AK-E1o"/>
                             <constraint firstItem="juQ-0r-9w6" firstAttribute="top" secondItem="abq-x2-iyQ" secondAttribute="top" constant="10" id="Czg-rf-c00"/>
                             <constraint firstItem="xfH-To-TXR" firstAttribute="leading" secondItem="abq-x2-iyQ" secondAttribute="leading" id="I9Y-JZ-Cfh"/>
                             <constraint firstItem="FLl-Ws-7hp" firstAttribute="top" secondItem="0E6-Ck-CVH" secondAttribute="bottom" id="IFe-0u-Fw1"/>
-                            <constraint firstItem="0E6-Ck-CVH" firstAttribute="top" secondItem="6lP-rR-LVp" secondAttribute="bottom" constant="55" id="Quq-wk-82t"/>
+                            <constraint firstItem="0E6-Ck-CVH" firstAttribute="top" secondItem="6lP-rR-LVp" secondAttribute="bottom" constant="30" id="Quq-wk-82t"/>
                             <constraint firstItem="xfH-To-TXR" firstAttribute="trailing" secondItem="abq-x2-iyQ" secondAttribute="trailing" id="Sfr-Oa-2sU"/>
                             <constraint firstItem="xfH-To-TXR" firstAttribute="centerX" secondItem="2fR-QO-msW" secondAttribute="centerX" id="XKt-ah-s65"/>
                             <constraint firstItem="nsT-by-uGr" firstAttribute="top" secondItem="xfH-To-TXR" secondAttribute="bottom" constant="30" id="ckh-wT-qeh"/>
                             <constraint firstItem="abq-x2-iyQ" firstAttribute="trailing" secondItem="juQ-0r-9w6" secondAttribute="trailing" constant="30" id="hjg-Lo-YmP"/>
-                            <constraint firstItem="6Uh-0J-Xte" firstAttribute="top" secondItem="FLl-Ws-7hp" secondAttribute="bottom" constant="45" id="hkw-eV-NyR"/>
+                            <constraint firstItem="6Uh-0J-Xte" firstAttribute="top" secondItem="FLl-Ws-7hp" secondAttribute="bottom" constant="30" id="hkw-eV-NyR"/>
                             <constraint firstItem="nsT-by-uGr" firstAttribute="centerX" secondItem="2fR-QO-msW" secondAttribute="centerX" id="huF-TU-ncu"/>
                             <constraint firstItem="Kol-7H-OAp" firstAttribute="centerX" secondItem="2fR-QO-msW" secondAttribute="centerX" id="itW-dz-xT4"/>
                             <constraint firstItem="26N-yL-5HZ" firstAttribute="top" secondItem="abq-x2-iyQ" secondAttribute="top" constant="10" id="nL5-0D-Zte"/>
                             <constraint firstItem="Kol-7H-OAp" firstAttribute="top" secondItem="nsT-by-uGr" secondAttribute="bottom" id="oRn-hV-p17"/>
+                            <constraint firstItem="ZCG-UH-3BF" firstAttribute="centerX" secondItem="2fR-QO-msW" secondAttribute="centerX" id="pj6-B1-Ysy"/>
                             <constraint firstItem="xfH-To-TXR" firstAttribute="top" secondItem="6Uh-0J-Xte" secondAttribute="bottom" id="ukT-zz-e4u"/>
                             <constraint firstItem="6Uh-0J-Xte" firstAttribute="centerX" secondItem="2fR-QO-msW" secondAttribute="centerX" id="w0L-vo-jYr"/>
                             <constraint firstItem="0E6-Ck-CVH" firstAttribute="centerX" secondItem="2fR-QO-msW" secondAttribute="centerX" id="wsW-h2-2RE"/>
@@ -257,8 +264,9 @@
                         <viewLayoutGuide key="safeArea" id="abq-x2-iyQ"/>
                     </view>
                     <connections>
+                        <outlet property="TXT_personName" destination="FLl-Ws-7hp" id="m7a-ap-Q2i"/>
                         <outlet property="datePicker" destination="xfH-To-TXR" id="2D5-s3-V4D"/>
-                        <outlet property="picker" destination="Kol-7H-OAp" id="vjP-ny-lbd"/>
+                        <outlet property="picker" destination="Kol-7H-OAp" id="x4d-1p-IUb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UJU-6p-buU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -272,7 +280,4 @@
         <image name="line.horizontal.3" catalog="system" width="64" height="32"/>
         <image name="logo" width="200" height="200"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="EOh-to-ZLj"/>
-    </inferredMetricsTieBreakers>
 </document>

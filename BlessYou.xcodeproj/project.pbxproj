@@ -10,9 +10,14 @@
 		2D209D8277FE1203E215CDE4 /* Pods_BlessYouTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEAC16EF871094355AA37975 /* Pods_BlessYouTests.framework */; };
 		9B0BF0519843D6460E0ABC7D /* Pods_BlessYou.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44ABC0B3DB5FBB3A6DB981AF /* Pods_BlessYou.framework */; };
 		DC8D9E876889342167DB3213 /* Pods_BlessYou_BlessYouUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BBF212421DE0F66146D5A54 /* Pods_BlessYou_BlessYouUITests.framework */; };
+		DF1EC964249E78B400ABDB88 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DF1EC963249E78B400ABDB88 /* GoogleService-Info.plist */; };
 		DF5F9030249A608B005288F6 /* homeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5F902F249A608B005288F6 /* homeController.swift */; };
 		DF5F9032249A61E7005288F6 /* userGoogle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5F9031249A61E7005288F6 /* userGoogle.swift */; };
 		DF5F9034249E4C5A005288F6 /* SubscirbeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5F9033249E4C5A005288F6 /* SubscirbeController.swift */; };
+		DF79196324AA3CFB0063DF12 /* MyNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF79196224AA3CFB0063DF12 /* MyNotification.swift */; };
+		DF79196A24AF17440063DF12 /* dateTimeUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF79196924AF17440063DF12 /* dateTimeUtil.swift */; };
+		DF79197324AF48960063DF12 /* signInProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF79197224AF48960063DF12 /* signInProtocol.swift */; };
+		DF84975D24A1DB0F0018348C /* fireStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF84975C24A1DB0F0018348C /* fireStore.swift */; };
 		DF8B71B1249A4048004F4751 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8B71B0249A4048004F4751 /* AppDelegate.swift */; };
 		DF8B71B3249A4048004F4751 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8B71B2249A4048004F4751 /* SceneDelegate.swift */; };
 		DF8B71B5249A4048004F4751 /* signInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8B71B4249A4048004F4751 /* signInController.swift */; };
@@ -46,9 +51,14 @@
 		1EF352C5B57A3DDEA2544AD0 /* Pods-BlessYou.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlessYou.debug.xcconfig"; path = "Target Support Files/Pods-BlessYou/Pods-BlessYou.debug.xcconfig"; sourceTree = "<group>"; };
 		3BBF212421DE0F66146D5A54 /* Pods_BlessYou_BlessYouUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlessYou_BlessYouUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		44ABC0B3DB5FBB3A6DB981AF /* Pods_BlessYou.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlessYou.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF1EC963249E78B400ABDB88 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DF5F902F249A608B005288F6 /* homeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeController.swift; sourceTree = "<group>"; };
 		DF5F9031249A61E7005288F6 /* userGoogle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userGoogle.swift; sourceTree = "<group>"; };
 		DF5F9033249E4C5A005288F6 /* SubscirbeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscirbeController.swift; sourceTree = "<group>"; };
+		DF79196224AA3CFB0063DF12 /* MyNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNotification.swift; sourceTree = "<group>"; };
+		DF79196924AF17440063DF12 /* dateTimeUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dateTimeUtil.swift; sourceTree = "<group>"; };
+		DF79197224AF48960063DF12 /* signInProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signInProtocol.swift; sourceTree = "<group>"; };
+		DF84975C24A1DB0F0018348C /* fireStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fireStore.swift; sourceTree = "<group>"; };
 		DF8B71AD249A4048004F4751 /* BlessYou.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlessYou.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF8B71B0249A4048004F4751 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DF8B71B2249A4048004F4751 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -120,6 +130,49 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		DF79196624AF16CA0063DF12 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				DF79196924AF17440063DF12 /* dateTimeUtil.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		DF79196724AF16E00063DF12 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DF8B71B4249A4048004F4751 /* signInController.swift */,
+				DF5F9033249E4C5A005288F6 /* SubscirbeController.swift */,
+				DF5F902F249A608B005288F6 /* homeController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		DF79196824AF17010063DF12 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DF79196224AA3CFB0063DF12 /* MyNotification.swift */,
+				DF5F9031249A61E7005288F6 /* userGoogle.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DF79197124AF485E0063DF12 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				DF79197224AF48960063DF12 /* signInProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		DF84975B24A1DAE30018348C /* DB */ = {
+			isa = PBXGroup;
+			children = (
+				DF84975C24A1DB0F0018348C /* fireStore.swift */,
+			);
+			path = DB;
+			sourceTree = "<group>";
+		};
 		DF8B71A4249A4048004F4751 = {
 			isa = PBXGroup;
 			children = (
@@ -145,15 +198,17 @@
 		DF8B71AF249A4048004F4751 /* BlessYou */ = {
 			isa = PBXGroup;
 			children = (
+				DF79197124AF485E0063DF12 /* Protocols */,
+				DF79196724AF16E00063DF12 /* Controllers */,
+				DF79196824AF17010063DF12 /* Models */,
+				DF84975B24A1DAE30018348C /* DB */,
+				DF79196624AF16CA0063DF12 /* Utils */,
 				DF8B71B0249A4048004F4751 /* AppDelegate.swift */,
 				DF8B71B2249A4048004F4751 /* SceneDelegate.swift */,
-				DF8B71B4249A4048004F4751 /* signInController.swift */,
-				DF5F902F249A608B005288F6 /* homeController.swift */,
-				DF5F9031249A61E7005288F6 /* userGoogle.swift */,
-				DF5F9033249E4C5A005288F6 /* SubscirbeController.swift */,
 				DF8B71B6249A4048004F4751 /* Main.storyboard */,
 				DF8B71B9249A4049004F4751 /* Assets.xcassets */,
 				DF8B71BB249A4049004F4751 /* LaunchScreen.storyboard */,
+				DF1EC963249E78B400ABDB88 /* GoogleService-Info.plist */,
 				DF8B71BE249A4049004F4751 /* Info.plist */,
 			);
 			path = BlessYou;
@@ -289,6 +344,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF8B71BD249A4049004F4751 /* LaunchScreen.storyboard in Resources */,
+				DF1EC964249E78B400ABDB88 /* GoogleService-Info.plist in Resources */,
 				DF8B71BA249A4049004F4751 /* Assets.xcassets in Resources */,
 				DF8B71B8249A4048004F4751 /* Main.storyboard in Resources */,
 			);
@@ -452,9 +508,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF79197324AF48960063DF12 /* signInProtocol.swift in Sources */,
+				DF79196A24AF17440063DF12 /* dateTimeUtil.swift in Sources */,
+				DF84975D24A1DB0F0018348C /* fireStore.swift in Sources */,
 				DF5F9034249E4C5A005288F6 /* SubscirbeController.swift in Sources */,
 				DF5F9030249A608B005288F6 /* homeController.swift in Sources */,
 				DF8B71B5249A4048004F4751 /* signInController.swift in Sources */,
+				DF79196324AA3CFB0063DF12 /* MyNotification.swift in Sources */,
 				DF8B71B1249A4048004F4751 /* AppDelegate.swift in Sources */,
 				DF8B71B3249A4048004F4751 /* SceneDelegate.swift in Sources */,
 				DF5F9032249A61E7005288F6 /* userGoogle.swift in Sources */,
@@ -637,7 +697,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Mor-Soferian.BlessYou";
+				PRODUCT_BUNDLE_IDENTIFIER = BlessYou;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -655,7 +715,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Mor-Soferian.BlessYou";
+				PRODUCT_BUNDLE_IDENTIFIER = BlessYou;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

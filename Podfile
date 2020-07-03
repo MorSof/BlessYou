@@ -7,7 +7,13 @@ target 'BlessYou' do
 
   # Pods for BlessYou
 
-     pod 'GoogleSignIn'
+     	pod 'GoogleSignIn'
+     	pod 'Firebase/Core'
+     	pod 'Firebase/Database'
+     	pod 'Firebase/Analytics'
+	pod 'Firebase/Firestore'
+	pod 'FirebaseFirestoreSwift'
+	
 
   target 'BlessYouTests' do
     inherit! :search_paths
