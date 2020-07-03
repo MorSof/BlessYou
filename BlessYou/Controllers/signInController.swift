@@ -14,6 +14,8 @@ import FirebaseFirestore
 
 class signInController: UIViewController, GIDSignInDelegate, SignInProtocol {
 
+    var birthdaysArr: Array<BirthdayDetails> = []
+    
     @IBOutlet weak var BTN_sign_in: GIDSignInButton!
     
     override func viewDidLoad() {
@@ -74,13 +76,15 @@ class signInController: UIViewController, GIDSignInDelegate, SignInProtocol {
     
     
     
-    func onFetchedBirthdaysSuccess(birthdaysArr: Array<Any>) {
+    func onFetchedBirthdaysSuccess(birthdaysArr: Array<BirthdayDetails>) {
         if birthdaysArr.isEmpty{
             print("Empty Birthdays")
             goHome()
         }
         else{
             print(" Not Empty Birthdays (Good!)")
+            self.birthdaysArr = birthdaysArr
+            goToTodayBirthdays()
         }
     }
     
@@ -94,13 +98,17 @@ class signInController: UIViewController, GIDSignInDelegate, SignInProtocol {
     
     public func goToSignIn(){
         self.performSegue(withIdentifier: "signInTransition", sender: self)
-
+    }
+    
+    public func goToTodayBirthdays(){
+         self.performSegue(withIdentifier: "TodayBirthdayTransition", sender: self)
     }
     
     //MARK: Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if(segue.identifier == "HomeTransition"){
-            
+        if(segue.identifier == "TodayBirthdayTransition"){
+            let vc = segue.destination as! todayBirthdaysController
+            vc.birthdaysArr = self.birthdaysArr
         }
     }
     

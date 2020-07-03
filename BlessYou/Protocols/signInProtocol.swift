@@ -11,7 +11,7 @@ import Foundation
 protocol SignInProtocol {
     
     //Signup call backs
-    func onFetchedBirthdaysSuccess(birthdaysArr: Array<Any>)
+    func onFetchedBirthdaysSuccess(birthdaysArr: Array<BirthdayDetails>)
         
     func onFailure(error: Error?)
 }

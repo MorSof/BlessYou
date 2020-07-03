@@ -28,7 +28,7 @@ class SubscirbeController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         datePicker.maximumDate = Calendar.current.date(byAdding: .day, value: 0, to: Date())
         self.picker.delegate = self
         self.picker.dataSource = self
-        pickerData = ["My Dear Mom", "Far Family", "Brother From Another Mother", "My Army Body", "Far Freind", "My Wife Mom"]
+        pickerData = ["My Dear Mom", "Far Family", "Brother From Another Mother", "My Army Body", "Far Friend", "My Wife Mom"]
         TXT_personName.text = "Person"
         selectedType = pickerData[0]
 

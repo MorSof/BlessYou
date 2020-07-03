@@ -25,7 +25,7 @@ class FireStore{
     
     
     static func fetchTodayBirthdays(signInController : SignInProtocol) {
-        var todayBirthdays: Array<Any> = []
+        var todayBirthdays: Array<BirthdayDetails> = []
         let fireStore = Firestore.firestore()
         
         let todayDateStr = DateTimeUtil.dateToString(date: Date.init())
@@ -35,9 +35,10 @@ class FireStore{
             if error == nil && snapshot?.documents != nil {
                 for document in snapshot!.documents{
                     let documentData = document.data()
-                    print(documentData["personName"]!)
-                    print(documentData["dateOfBirth"]!)
-                    todayBirthdays.append(documentData)
+                    let birthday = BirthdayDetails.init(personName: documentData["personName"] as! String, dateOfBirth: documentData["dateOfBirth"]! as! String, type: documentData["type"]! as! String)
+                    print(birthday.personName)
+                    print(birthday.dateOfBirth)
+                    todayBirthdays.append(birthday)
                 }
             }
             signInController.onFetchedBirthdaysSuccess(birthdaysArr: todayBirthdays)

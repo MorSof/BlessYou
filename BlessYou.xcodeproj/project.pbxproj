@@ -17,6 +17,9 @@
 		DF79196324AA3CFB0063DF12 /* MyNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF79196224AA3CFB0063DF12 /* MyNotification.swift */; };
 		DF79196A24AF17440063DF12 /* dateTimeUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF79196924AF17440063DF12 /* dateTimeUtil.swift */; };
 		DF79197324AF48960063DF12 /* signInProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF79197224AF48960063DF12 /* signInProtocol.swift */; };
+		DF79197724AF57A00063DF12 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF79197624AF57A00063DF12 /* Cell.swift */; };
+		DF79197924AF596B0063DF12 /* todayBirthdaysController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF79197824AF596B0063DF12 /* todayBirthdaysController.swift */; };
+		DF79197B24AF6BF40063DF12 /* birthdayDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF79197A24AF6BF40063DF12 /* birthdayDetails.swift */; };
 		DF84975D24A1DB0F0018348C /* fireStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF84975C24A1DB0F0018348C /* fireStore.swift */; };
 		DF8B71B1249A4048004F4751 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8B71B0249A4048004F4751 /* AppDelegate.swift */; };
 		DF8B71B3249A4048004F4751 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8B71B2249A4048004F4751 /* SceneDelegate.swift */; };
@@ -58,6 +61,9 @@
 		DF79196224AA3CFB0063DF12 /* MyNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNotification.swift; sourceTree = "<group>"; };
 		DF79196924AF17440063DF12 /* dateTimeUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dateTimeUtil.swift; sourceTree = "<group>"; };
 		DF79197224AF48960063DF12 /* signInProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signInProtocol.swift; sourceTree = "<group>"; };
+		DF79197624AF57A00063DF12 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		DF79197824AF596B0063DF12 /* todayBirthdaysController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = todayBirthdaysController.swift; sourceTree = "<group>"; };
+		DF79197A24AF6BF40063DF12 /* birthdayDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = birthdayDetails.swift; sourceTree = "<group>"; };
 		DF84975C24A1DB0F0018348C /* fireStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fireStore.swift; sourceTree = "<group>"; };
 		DF8B71AD249A4048004F4751 /* BlessYou.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlessYou.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF8B71B0249A4048004F4751 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -144,6 +150,7 @@
 				DF8B71B4249A4048004F4751 /* signInController.swift */,
 				DF5F9033249E4C5A005288F6 /* SubscirbeController.swift */,
 				DF5F902F249A608B005288F6 /* homeController.swift */,
+				DF79197824AF596B0063DF12 /* todayBirthdaysController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -153,6 +160,8 @@
 			children = (
 				DF79196224AA3CFB0063DF12 /* MyNotification.swift */,
 				DF5F9031249A61E7005288F6 /* userGoogle.swift */,
+				DF79197624AF57A00063DF12 /* Cell.swift */,
+				DF79197A24AF6BF40063DF12 /* birthdayDetails.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -512,10 +521,13 @@
 				DF79196A24AF17440063DF12 /* dateTimeUtil.swift in Sources */,
 				DF84975D24A1DB0F0018348C /* fireStore.swift in Sources */,
 				DF5F9034249E4C5A005288F6 /* SubscirbeController.swift in Sources */,
+				DF79197924AF596B0063DF12 /* todayBirthdaysController.swift in Sources */,
 				DF5F9030249A608B005288F6 /* homeController.swift in Sources */,
 				DF8B71B5249A4048004F4751 /* signInController.swift in Sources */,
 				DF79196324AA3CFB0063DF12 /* MyNotification.swift in Sources */,
 				DF8B71B1249A4048004F4751 /* AppDelegate.swift in Sources */,
+				DF79197724AF57A00063DF12 /* Cell.swift in Sources */,
+				DF79197B24AF6BF40063DF12 /* birthdayDetails.swift in Sources */,
 				DF8B71B3249A4048004F4751 /* SceneDelegate.swift in Sources */,
 				DF5F9032249A61E7005288F6 /* userGoogle.swift in Sources */,
 			);
