@@ -8,13 +8,10 @@
 
 import UIKit
 import GoogleSignIn
+import GoogleSignIn
 
 class signInController: UIViewController, GIDSignInDelegate, SignInProtocol {
 
-    var birthdaysArr: Array<BirthdayDetails> = []
-    
-    @IBOutlet weak var BTN_sign_in: GIDSignInButton!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         GIDSignIn.sharedInstance().delegate = self
@@ -80,7 +77,7 @@ class signInController: UIViewController, GIDSignInDelegate, SignInProtocol {
         }
         else{
             print(" Not Empty Birthdays (Good!)")
-            self.birthdaysArr = birthdaysArr
+            TodayBirthdays.todayBirthdays = birthdaysArr
             goToTodayBirthdays()
         }
     }
@@ -104,8 +101,8 @@ class signInController: UIViewController, GIDSignInDelegate, SignInProtocol {
     //MARK: Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "TodayBirthdayTransition"){
-            let vc = segue.destination as! todayBirthdaysController
-            vc.birthdaysArr = self.birthdaysArr
+//            let vc = segue.destination as! todayBirthdaysController
+//            vc.birthdaysArr = self.birthdaysArr
         }
     }
     

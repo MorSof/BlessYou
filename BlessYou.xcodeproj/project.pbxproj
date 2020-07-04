@@ -11,17 +11,23 @@
 		9B0BF0519843D6460E0ABC7D /* Pods_BlessYou.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44ABC0B3DB5FBB3A6DB981AF /* Pods_BlessYou.framework */; };
 		DC8D9E876889342167DB3213 /* Pods_BlessYou_BlessYouUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BBF212421DE0F66146D5A54 /* Pods_BlessYou_BlessYouUITests.framework */; };
 		DF1EC964249E78B400ABDB88 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DF1EC963249E78B400ABDB88 /* GoogleService-Info.plist */; };
-		DF5F9030249A608B005288F6 /* homeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5F902F249A608B005288F6 /* homeController.swift */; };
 		DF5F9032249A61E7005288F6 /* userGoogle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5F9031249A61E7005288F6 /* userGoogle.swift */; };
 		DF5F9034249E4C5A005288F6 /* SubscirbeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5F9033249E4C5A005288F6 /* SubscirbeController.swift */; };
 		DF79196324AA3CFB0063DF12 /* MyNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF79196224AA3CFB0063DF12 /* MyNotification.swift */; };
 		DF79196A24AF17440063DF12 /* dateTimeUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF79196924AF17440063DF12 /* dateTimeUtil.swift */; };
 		DF79197324AF48960063DF12 /* signInProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF79197224AF48960063DF12 /* signInProtocol.swift */; };
-		DF79197724AF57A00063DF12 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF79197624AF57A00063DF12 /* Cell.swift */; };
+		DF79197724AF57A00063DF12 /* TodayBirthdaysCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF79197624AF57A00063DF12 /* TodayBirthdaysCell.swift */; };
 		DF79197924AF596B0063DF12 /* todayBirthdaysController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF79197824AF596B0063DF12 /* todayBirthdaysController.swift */; };
 		DF79197B24AF6BF40063DF12 /* birthdayDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF79197A24AF6BF40063DF12 /* birthdayDetails.swift */; };
 		DF79197D24B0543B0063DF12 /* blessController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF79197C24B0543B0063DF12 /* blessController.swift */; };
 		DF79197F24B0635E0063DF12 /* blessProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF79197E24B0635E0063DF12 /* blessProtocol.swift */; };
+		DF79198124B07A540063DF12 /* homeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF79198024B07A540063DF12 /* homeController.swift */; };
+		DF79198324B07BE10063DF12 /* todayBirthdays.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF79198224B07BE10063DF12 /* todayBirthdays.swift */; };
+		DF79198524B08AAD0063DF12 /* chooseDateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF79198424B08AAD0063DF12 /* chooseDateController.swift */; };
+		DF79198724B08ACB0063DF12 /* chooseTypeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF79198624B08ACB0063DF12 /* chooseTypeController.swift */; };
+		DF79198924B09C320063DF12 /* subscriptionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF79198824B09C320063DF12 /* subscriptionsController.swift */; };
+		DF79198C24B0A5A30063DF12 /* SubscriptionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF79198B24B0A5A30063DF12 /* SubscriptionsCell.swift */; };
+		DF79198E24B0B85A0063DF12 /* subscriptionsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF79198D24B0B85A0063DF12 /* subscriptionsProtocol.swift */; };
 		DF84975D24A1DB0F0018348C /* fireStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF84975C24A1DB0F0018348C /* fireStore.swift */; };
 		DF8B71B1249A4048004F4751 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8B71B0249A4048004F4751 /* AppDelegate.swift */; };
 		DF8B71B3249A4048004F4751 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8B71B2249A4048004F4751 /* SceneDelegate.swift */; };
@@ -57,17 +63,23 @@
 		3BBF212421DE0F66146D5A54 /* Pods_BlessYou_BlessYouUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlessYou_BlessYouUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		44ABC0B3DB5FBB3A6DB981AF /* Pods_BlessYou.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlessYou.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF1EC963249E78B400ABDB88 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		DF5F902F249A608B005288F6 /* homeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeController.swift; sourceTree = "<group>"; };
 		DF5F9031249A61E7005288F6 /* userGoogle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userGoogle.swift; sourceTree = "<group>"; };
 		DF5F9033249E4C5A005288F6 /* SubscirbeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscirbeController.swift; sourceTree = "<group>"; };
 		DF79196224AA3CFB0063DF12 /* MyNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNotification.swift; sourceTree = "<group>"; };
 		DF79196924AF17440063DF12 /* dateTimeUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dateTimeUtil.swift; sourceTree = "<group>"; };
 		DF79197224AF48960063DF12 /* signInProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signInProtocol.swift; sourceTree = "<group>"; };
-		DF79197624AF57A00063DF12 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		DF79197624AF57A00063DF12 /* TodayBirthdaysCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayBirthdaysCell.swift; sourceTree = "<group>"; };
 		DF79197824AF596B0063DF12 /* todayBirthdaysController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = todayBirthdaysController.swift; sourceTree = "<group>"; };
 		DF79197A24AF6BF40063DF12 /* birthdayDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = birthdayDetails.swift; sourceTree = "<group>"; };
 		DF79197C24B0543B0063DF12 /* blessController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = blessController.swift; sourceTree = "<group>"; };
 		DF79197E24B0635E0063DF12 /* blessProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = blessProtocol.swift; sourceTree = "<group>"; };
+		DF79198024B07A540063DF12 /* homeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = homeController.swift; sourceTree = "<group>"; };
+		DF79198224B07BE10063DF12 /* todayBirthdays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = todayBirthdays.swift; sourceTree = "<group>"; };
+		DF79198424B08AAD0063DF12 /* chooseDateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chooseDateController.swift; sourceTree = "<group>"; };
+		DF79198624B08ACB0063DF12 /* chooseTypeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chooseTypeController.swift; sourceTree = "<group>"; };
+		DF79198824B09C320063DF12 /* subscriptionsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = subscriptionsController.swift; sourceTree = "<group>"; };
+		DF79198B24B0A5A30063DF12 /* SubscriptionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionsCell.swift; sourceTree = "<group>"; };
+		DF79198D24B0B85A0063DF12 /* subscriptionsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = subscriptionsProtocol.swift; sourceTree = "<group>"; };
 		DF84975C24A1DB0F0018348C /* fireStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fireStore.swift; sourceTree = "<group>"; };
 		DF8B71AD249A4048004F4751 /* BlessYou.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlessYou.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF8B71B0249A4048004F4751 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -151,11 +163,14 @@
 		DF79196724AF16E00063DF12 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				DF79198024B07A540063DF12 /* homeController.swift */,
 				DF8B71B4249A4048004F4751 /* signInController.swift */,
 				DF5F9033249E4C5A005288F6 /* SubscirbeController.swift */,
-				DF5F902F249A608B005288F6 /* homeController.swift */,
 				DF79197824AF596B0063DF12 /* todayBirthdaysController.swift */,
 				DF79197C24B0543B0063DF12 /* blessController.swift */,
+				DF79198424B08AAD0063DF12 /* chooseDateController.swift */,
+				DF79198624B08ACB0063DF12 /* chooseTypeController.swift */,
+				DF79198824B09C320063DF12 /* subscriptionsController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -165,8 +180,10 @@
 			children = (
 				DF79196224AA3CFB0063DF12 /* MyNotification.swift */,
 				DF5F9031249A61E7005288F6 /* userGoogle.swift */,
-				DF79197624AF57A00063DF12 /* Cell.swift */,
+				DF79197624AF57A00063DF12 /* TodayBirthdaysCell.swift */,
 				DF79197A24AF6BF40063DF12 /* birthdayDetails.swift */,
+				DF79198224B07BE10063DF12 /* todayBirthdays.swift */,
+				DF79198B24B0A5A30063DF12 /* SubscriptionsCell.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -176,6 +193,7 @@
 			children = (
 				DF79197224AF48960063DF12 /* signInProtocol.swift */,
 				DF79197E24B0635E0063DF12 /* blessProtocol.swift */,
+				DF79198D24B0B85A0063DF12 /* subscriptionsProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -525,19 +543,25 @@
 			files = (
 				DF79197324AF48960063DF12 /* signInProtocol.swift in Sources */,
 				DF79196A24AF17440063DF12 /* dateTimeUtil.swift in Sources */,
+				DF79198C24B0A5A30063DF12 /* SubscriptionsCell.swift in Sources */,
 				DF84975D24A1DB0F0018348C /* fireStore.swift in Sources */,
 				DF5F9034249E4C5A005288F6 /* SubscirbeController.swift in Sources */,
 				DF79197924AF596B0063DF12 /* todayBirthdaysController.swift in Sources */,
-				DF5F9030249A608B005288F6 /* homeController.swift in Sources */,
 				DF79197F24B0635E0063DF12 /* blessProtocol.swift in Sources */,
 				DF8B71B5249A4048004F4751 /* signInController.swift in Sources */,
 				DF79196324AA3CFB0063DF12 /* MyNotification.swift in Sources */,
 				DF8B71B1249A4048004F4751 /* AppDelegate.swift in Sources */,
-				DF79197724AF57A00063DF12 /* Cell.swift in Sources */,
+				DF79197724AF57A00063DF12 /* TodayBirthdaysCell.swift in Sources */,
+				DF79198324B07BE10063DF12 /* todayBirthdays.swift in Sources */,
 				DF79197B24AF6BF40063DF12 /* birthdayDetails.swift in Sources */,
+				DF79198924B09C320063DF12 /* subscriptionsController.swift in Sources */,
 				DF79197D24B0543B0063DF12 /* blessController.swift in Sources */,
+				DF79198E24B0B85A0063DF12 /* subscriptionsProtocol.swift in Sources */,
 				DF8B71B3249A4048004F4751 /* SceneDelegate.swift in Sources */,
 				DF5F9032249A61E7005288F6 /* userGoogle.swift in Sources */,
+				DF79198524B08AAD0063DF12 /* chooseDateController.swift in Sources */,
+				DF79198724B08ACB0063DF12 /* chooseTypeController.swift in Sources */,
+				DF79198124B07A540063DF12 /* homeController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,14 +6,12 @@
 //  Copyright © 2020 Mor Soferian. All rights reserved.
 //
 
-import UIKit
-
 import Foundation
 import UIKit
 
-class Cell: UITableViewCell {
-
-
+class TodayBirthdaysCell: UITableViewCell {
+    
     @IBOutlet weak var LBL_Name: UILabel!
+    
 }
 

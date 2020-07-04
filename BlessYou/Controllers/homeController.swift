@@ -9,30 +9,26 @@
 import UIKit
 import GoogleSignIn
 import UserNotifications
+import GoogleSignIn
+
 
 class homeController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
-
     @IBAction func didTapSignOut(_ sender: AnyObject) {
-        print("here")
         GIDSignIn.sharedInstance().signOut()
         goToSignIn()
    }
     
-    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!,
-              withError error: Error!) {
-      // Perform any operations when the user disconnects from app here.
-        print("signing out")
-        goToSignIn()
-    }
-    
     @IBAction func onSubscribe(_ sender: Any) {
         goSubscription()
+    }
+    
+    @IBAction func onTodayBirthday(_ sender: Any) {
+        goToTodayBirthdays()
     }
     
     public func goSubscription(){
@@ -41,6 +37,14 @@ class homeController: UIViewController {
     
     public func goToSignIn(){
         self.performSegue(withIdentifier: "signInTransition", sender: self)
+    }
+    
+    public func goToTodayBirthdays(){
+           self.performSegue(withIdentifier: "TodayBirthdayTransition", sender: self)
+    }
+    
+    @IBAction func onMySubscriptions(_ sender: UIButton) {
+         self.performSegue(withIdentifier: "subscriptionsTransition", sender: self)
     }
     
     //MARK: Navigation

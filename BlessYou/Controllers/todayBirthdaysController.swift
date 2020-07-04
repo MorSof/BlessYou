@@ -7,42 +7,37 @@
 //
 
 import UIKit
+import GoogleSignIn
 
 class todayBirthdaysController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-
-    var birthdaysArr: Array<BirthdayDetails> = []
     var selectedBirthday: BirthdayDetails?
-
     let cellReuseIdentifier = "birthday_cell"
     
     @IBOutlet weak var TABLE_tabel: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.birthdaysArr[0].printBirthday()
         TABLE_tabel.delegate = self
         TABLE_tabel.dataSource = self
-        // Do any additional setup after loading the view.
     }
     
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.birthdaysArr.count
+        return TodayBirthdays.todayBirthdays.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell : Cell? = self.TABLE_tabel.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as? Cell
-//         cell?.LBL_score?.text = String(self.allScores[indexPath.row].time)
-         cell?.LBL_Name?.text = String(self.birthdaysArr[indexPath.row].personName)
-//         cell?.LBL_date.text = TimeDateUtil.myDateFormat(date: self.allScores[indexPath.row].date)
+        var cell : TodayBirthdaysCell? = self.TABLE_tabel.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as? TodayBirthdaysCell
+         cell?.LBL_Name?.text = String(TodayBirthdays.todayBirthdays[indexPath.row].personName)
          if(cell == nil){
-             cell = Cell(style: UITableViewCell.CellStyle.default, reuseIdentifier: cellReuseIdentifier)
+             cell = TodayBirthdaysCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: cellReuseIdentifier)
          }
          return cell!
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedBirthday = birthdaysArr[indexPath.row]
+        selectedBirthday = TodayBirthdays.todayBirthdays[indexPath.row]
         goToBless()
       }
     
@@ -50,7 +45,11 @@ class todayBirthdaysController: UIViewController, UITableViewDelegate, UITableVi
             self.performSegue(withIdentifier: "BlessTransition", sender: self)
        }
        
-       //MARK: Navigation
+    @IBAction func goHome(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "HomeTransition", sender: self)
+    }
+    
+    //MARK: Navigation
        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
            if(segue.identifier == "BlessTransition"){
                let vc = segue.destination as! blessController

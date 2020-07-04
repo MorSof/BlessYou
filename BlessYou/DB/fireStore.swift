@@ -13,13 +13,14 @@ import FirebaseFirestore
 
 class FireStore{
     
-    static func saveSubscription(personName: String, dateOfBirth: String, type: String){
+    static func saveSubscription(personName: String, dateOfBirth: String, dateOfBirthMonthDay: String, type: String){
         let fireStore = Firestore.firestore()
         fireStore.collection("users").document(UserGoogle.email).collection("subscriptions").document(UUID().uuidString).setData(
-            [
-             "personName" : personName,
-             "dateOfBirth": dateOfBirth,
-             "type": type
+        [
+            "personName" : personName,
+            "dateOfBirth": dateOfBirth,
+            "type": type,
+            "dateOfBirthMonthDay" : dateOfBirthMonthDay
         ])
     }
     
@@ -27,17 +28,13 @@ class FireStore{
     static func fetchTodayBirthdays(signInController : SignInProtocol) {
         var todayBirthdays: Array<BirthdayDetails> = []
         let fireStore = Firestore.firestore()
+        let todayDateStrMonthDay = DateTimeUtil.dateToStringMonthDay(date: Date.init())
         
-        let todayDateStr = DateTimeUtil.dateToString(date: Date.init())
-        print(todayDateStr)
-        
-        fireStore.collection("users").document(UserGoogle.email).collection("subscriptions").whereField("dateOfBirth", isEqualTo: todayDateStr).getDocuments{ (snapshot,error) in
+        fireStore.collection("users").document(UserGoogle.email).collection("subscriptions").whereField("dateOfBirthMonthDay", isEqualTo: todayDateStrMonthDay).getDocuments{ (snapshot,error) in
             if error == nil && snapshot?.documents != nil {
                 for document in snapshot!.documents{
                     let documentData = document.data()
-                    let birthday = BirthdayDetails.init(personName: documentData["personName"] as! String, dateOfBirth: documentData["dateOfBirth"]! as! String, type: documentData["type"]! as! String)
-                    print(birthday.personName)
-                    print(birthday.dateOfBirth)
+                    let birthday = BirthdayDetails.init(personName: documentData["personName"] as! String, dateOfBirth: documentData["dateOfBirth"]! as! String, monthDayDateStr: documentData["dateOfBirthMonthDay"] as! String, type: documentData["type"]! as! String)
                     todayBirthdays.append(birthday)
                 }
             }
@@ -60,5 +57,21 @@ class FireStore{
             
         }
     }
+    
+    static func fetchUserSubscriptions(subscriptionsController : SubscriptionsProtocol){
+        var subscriptions: Array<BirthdayDetails> = []
+        let fireStore = Firestore.firestore()
+        fireStore.collection("users").document(UserGoogle.email).collection("subscriptions").getDocuments{ (snapshot,error) in
+            if error == nil && snapshot?.documents != nil {
+                for document in snapshot!.documents{
+                    let documentData = document.data()
+                    let birthday = BirthdayDetails.init(personName: documentData["personName"] as! String, dateOfBirth: documentData["dateOfBirth"]! as! String, monthDayDateStr: documentData["dateOfBirthMonthDay"] as! String, type: documentData["type"]! as! String)
+                    subscriptions.append(birthday)
+                }
+            }
+            subscriptionsController.onFetchedSubscriptionsSuccess(subscriptions: subscriptions)
+        }
+    }
+    
     
 }

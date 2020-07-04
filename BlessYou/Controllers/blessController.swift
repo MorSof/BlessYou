@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleSignIn
 
 class blessController: UIViewController, BlessProtocol {
     
@@ -48,4 +49,17 @@ class blessController: UIViewController, BlessProtocol {
         pasteboard.string = TXT_wish.text
         
     }
+    @IBAction func goHome(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "HomeTransition", sender: self)
+    }
+    
+    
+    @IBAction func onReturn(_ sender: UIButton) {
+        if let nav = self.navigationController {
+            nav.popViewController(animated: true)
+        } else {
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
+    
 }

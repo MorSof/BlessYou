@@ -12,12 +12,14 @@ class BirthdayDetails {
     
     var personName: String
     var dateOfBirth: String
+    var monthDayDateStr: String
     var type: String
     
-    init(personName: String, dateOfBirth: String, type: String) {
+    init(personName: String, dateOfBirth: String, monthDayDateStr: String, type: String) {
         self.personName = personName
         self.dateOfBirth = dateOfBirth
         self.type = type
+        self.monthDayDateStr = monthDayDateStr
     }
     
     func printBirthday(){
