@@ -64,6 +64,7 @@ class FireStore{
         fireStore.collection("users").document(UserGoogle.email).collection("subscriptions").getDocuments{ (snapshot,error) in
             if error == nil && snapshot?.documents != nil {
                 for document in snapshot!.documents{
+                    print(document.documentID)
                     let documentData = document.data()
                     let birthday = BirthdayDetails.init(personName: documentData["personName"] as! String, dateOfBirth: documentData["dateOfBirth"]! as! String, monthDayDateStr: documentData["dateOfBirthMonthDay"] as! String, type: documentData["type"]! as! String)
                     subscriptions.append(birthday)

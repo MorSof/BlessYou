@@ -12,6 +12,10 @@ import GoogleSignIn
 
 class signInController: UIViewController, GIDSignInDelegate, SignInProtocol {
 
+//    var birthdaysArr: Array<BirthdayDetails> = []
+    
+    @IBOutlet weak var BTN_sign_in: GIDSignInButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         GIDSignIn.sharedInstance().delegate = self
