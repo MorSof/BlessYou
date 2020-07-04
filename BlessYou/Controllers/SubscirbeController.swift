@@ -8,9 +8,6 @@
 
 import UIKit
 import SwiftUI
-import Firebase
-import FirebaseCore
-import FirebaseFirestore
 
 class SubscirbeController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     

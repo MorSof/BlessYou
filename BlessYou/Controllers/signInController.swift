@@ -8,9 +8,6 @@
 
 import UIKit
 import GoogleSignIn
-import Firebase
-import FirebaseCore
-import FirebaseFirestore
 
 class signInController: UIViewController, GIDSignInDelegate, SignInProtocol {
 

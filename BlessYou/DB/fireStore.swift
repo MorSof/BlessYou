@@ -45,4 +45,20 @@ class FireStore{
         }
     }
     
+    static func fetchWishesByType(type: String, blessController : BlessProtocol){
+        var wishes: Array<String> = []
+        let fireStore = Firestore.firestore()
+        fireStore.collection("Wishes").document(type).getDocument { (document, error) in
+            if let document = document, document.exists {
+                for (_, value) in document.data()! {
+                    wishes.append(value as! String)
+                }
+                blessController.onFetchedWishesSuccess(wishes: wishes)
+            } else {
+                blessController.onFailure(error: error)
+            }
+            
+        }
+    }
+    
 }

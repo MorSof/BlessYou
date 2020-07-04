@@ -12,7 +12,8 @@ class todayBirthdaysController: UIViewController, UITableViewDelegate, UITableVi
 
 
     var birthdaysArr: Array<BirthdayDetails> = []
-    
+    var selectedBirthday: BirthdayDetails?
+
     let cellReuseIdentifier = "birthday_cell"
     
     @IBOutlet weak var TABLE_tabel: UITableView!
@@ -41,8 +42,19 @@ class todayBirthdaysController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        birthdaysArr[indexPath.row].printBirthday()
+        selectedBirthday = birthdaysArr[indexPath.row]
+        goToBless()
       }
     
-    
+    public func goToBless(){
+            self.performSegue(withIdentifier: "BlessTransition", sender: self)
+       }
+       
+       //MARK: Navigation
+       override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+           if(segue.identifier == "BlessTransition"){
+               let vc = segue.destination as! blessController
+               vc.birthdayDetails = self.selectedBirthday
+           }
+       }
 }
