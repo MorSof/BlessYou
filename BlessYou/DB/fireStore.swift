@@ -13,15 +13,17 @@ import FirebaseFirestore
 
 class FireStore{
     
-    static func saveSubscription(personName: String, dateOfBirth: String, dateOfBirthMonthDay: String, type: String){
+    static func saveSubscription(bithdayDetails: BirthdayDetails) -> String{
         let fireStore = Firestore.firestore()
-        fireStore.collection("users").document(UserGoogle.email).collection("subscriptions").document(UUID().uuidString).setData(
+        let documentId = bithdayDetails.documentId == "" ? UUID().uuidString : bithdayDetails.documentId
+        fireStore.collection("users").document(UserGoogle.email).collection("subscriptions").document(documentId).setData(
         [
-            "personName" : personName,
-            "dateOfBirth": dateOfBirth,
-            "type": type,
-            "dateOfBirthMonthDay" : dateOfBirthMonthDay
+            "personName" : bithdayDetails.personName,
+            "dateOfBirth": bithdayDetails.dateOfBirth,
+            "type": bithdayDetails.type,
+            "dateOfBirthMonthDay" : bithdayDetails.monthDayDateStr
         ])
+        return documentId
     }
     
     
@@ -34,7 +36,7 @@ class FireStore{
             if error == nil && snapshot?.documents != nil {
                 for document in snapshot!.documents{
                     let documentData = document.data()
-                    let birthday = BirthdayDetails.init(personName: documentData["personName"] as! String, dateOfBirth: documentData["dateOfBirth"]! as! String, monthDayDateStr: documentData["dateOfBirthMonthDay"] as! String, type: documentData["type"]! as! String)
+                    let birthday = BirthdayDetails.init(personName: documentData["personName"] as! String, dateOfBirth: documentData["dateOfBirth"]! as! String, monthDayDateStr: documentData["dateOfBirthMonthDay"] as! String, type: documentData["type"]! as! String, documentId: document.documentID)
                     todayBirthdays.append(birthday)
                 }
             }
@@ -64,13 +66,25 @@ class FireStore{
         fireStore.collection("users").document(UserGoogle.email).collection("subscriptions").getDocuments{ (snapshot,error) in
             if error == nil && snapshot?.documents != nil {
                 for document in snapshot!.documents{
-                    print(document.documentID)
                     let documentData = document.data()
-                    let birthday = BirthdayDetails.init(personName: documentData["personName"] as! String, dateOfBirth: documentData["dateOfBirth"]! as! String, monthDayDateStr: documentData["dateOfBirthMonthDay"] as! String, type: documentData["type"]! as! String)
+                    let birthday = BirthdayDetails.init(personName: documentData["personName"] as! String, dateOfBirth: documentData["dateOfBirth"]! as! String, monthDayDateStr: documentData["dateOfBirthMonthDay"] as! String, type: documentData["type"]! as! String, documentId: document.documentID)
                     subscriptions.append(birthday)
                 }
             }
             subscriptionsController.onFetchedSubscriptionsSuccess(subscriptions: subscriptions)
+        }
+    }
+    
+    static func deleteSubscriptions( deleteProtocol: DeleteProtocol, documentId: String){
+        
+        let fireStore = Firestore.firestore()
+    fireStore.collection("users").document(UserGoogle.email).collection("subscriptions").document(documentId).delete() { err in
+            if let err = err {
+                print("Error removing document: \(err)")
+            } else {
+                print("Document \(documentId) successfully removed!")
+                deleteProtocol.onSubscriptionDeleteSuccess()
+            }
         }
     }
     

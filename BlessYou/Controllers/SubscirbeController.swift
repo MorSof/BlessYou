@@ -13,10 +13,12 @@ import GoogleSignIn
 class SubscirbeController: UIViewController {
     
     @IBOutlet weak var TXT_personName: UITextField!
-    
+    var birthdayToEdit: BirthdayDetails?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         TXT_personName.text = "Person"
+        birthdayToEdit = birthdayToEdit == nil ? BirthdayDetails.init(personName: "", dateOfBirth: "", monthDayDateStr: "", type: "", documentId: "") : birthdayToEdit
     }
     
     @IBAction func onNext(_ sender: UIButton) {
@@ -32,6 +34,7 @@ class SubscirbeController: UIViewController {
         if(segue.identifier == "DateTransition"){
             let vc = segue.destination as! chooseDateController
             vc.personName = TXT_personName.text!
+            vc.birthdayToEdit = birthdayToEdit
         }
     }
     

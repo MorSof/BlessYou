@@ -15,6 +15,7 @@ class chooseDateController: UIViewController {
     var dateDict: Dictionary<String,Int>! = [:]
     var fullDateStr: String! = ""
     var monthDayDateStr: String! = ""
+    var birthdayToEdit: BirthdayDetails?
 
     @IBOutlet weak var datePicker: UIDatePicker!
     
@@ -59,6 +60,8 @@ class chooseDateController: UIViewController {
             vc.dateDict = dateDict
             vc.fullDateStr = fullDateStr
             vc.monthDayDateStr = monthDayDateStr
+            vc.birthdayToEdit = birthdayToEdit
+
            }
        }
 

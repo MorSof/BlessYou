@@ -11,6 +11,7 @@
 		9B0BF0519843D6460E0ABC7D /* Pods_BlessYou.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44ABC0B3DB5FBB3A6DB981AF /* Pods_BlessYou.framework */; };
 		DC8D9E876889342167DB3213 /* Pods_BlessYou_BlessYouUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BBF212421DE0F66146D5A54 /* Pods_BlessYou_BlessYouUITests.framework */; };
 		DF1EC964249E78B400ABDB88 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DF1EC963249E78B400ABDB88 /* GoogleService-Info.plist */; };
+		DF53CC8924B87CEA0022A4BB /* deleteProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF53CC8824B87CEA0022A4BB /* deleteProtocol.swift */; };
 		DF5F9032249A61E7005288F6 /* userGoogle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5F9031249A61E7005288F6 /* userGoogle.swift */; };
 		DF5F9034249E4C5A005288F6 /* SubscirbeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5F9033249E4C5A005288F6 /* SubscirbeController.swift */; };
 		DF79196324AA3CFB0063DF12 /* MyNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF79196224AA3CFB0063DF12 /* MyNotification.swift */; };
@@ -63,6 +64,7 @@
 		3BBF212421DE0F66146D5A54 /* Pods_BlessYou_BlessYouUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlessYou_BlessYouUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		44ABC0B3DB5FBB3A6DB981AF /* Pods_BlessYou.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlessYou.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF1EC963249E78B400ABDB88 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DF53CC8824B87CEA0022A4BB /* deleteProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = deleteProtocol.swift; sourceTree = "<group>"; };
 		DF5F9031249A61E7005288F6 /* userGoogle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userGoogle.swift; sourceTree = "<group>"; };
 		DF5F9033249E4C5A005288F6 /* SubscirbeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscirbeController.swift; sourceTree = "<group>"; };
 		DF79196224AA3CFB0063DF12 /* MyNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNotification.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 				DF79197224AF48960063DF12 /* signInProtocol.swift */,
 				DF79197E24B0635E0063DF12 /* blessProtocol.swift */,
 				DF79198D24B0B85A0063DF12 /* subscriptionsProtocol.swift */,
+				DF53CC8824B87CEA0022A4BB /* deleteProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -555,6 +558,7 @@
 				DF79198324B07BE10063DF12 /* todayBirthdays.swift in Sources */,
 				DF79197B24AF6BF40063DF12 /* birthdayDetails.swift in Sources */,
 				DF79198924B09C320063DF12 /* subscriptionsController.swift in Sources */,
+				DF53CC8924B87CEA0022A4BB /* deleteProtocol.swift in Sources */,
 				DF79197D24B0543B0063DF12 /* blessController.swift in Sources */,
 				DF79198E24B0B85A0063DF12 /* subscriptionsProtocol.swift in Sources */,
 				DF8B71B3249A4048004F4751 /* SceneDelegate.swift in Sources */,
