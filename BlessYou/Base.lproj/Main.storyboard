@@ -100,13 +100,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SXQ-Yg-K1Q" userLabel="Signout">
-                                <rect key="frame" x="350" y="55.666666666666664" width="34" height="27.666666666666671"/>
+                                <rect key="frame" x="344" y="55.666666666666657" width="40" height="37.000000000000007"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="34" id="JZF-Aa-2MO">
+                                    <constraint firstAttribute="width" constant="40" id="JZF-Aa-2MO">
                                         <variation key="heightClass=regular-widthClass=regular" constant="60"/>
                                     </constraint>
-                                    <constraint firstAttribute="height" constant="30.5" id="cF1-pF-KFX">
+                                    <constraint firstAttribute="height" constant="40" id="cF1-pF-KFX">
                                         <variation key="heightClass=regular-widthClass=regular" constant="60"/>
                                     </constraint>
                                 </constraints>
@@ -434,6 +434,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r3F-4A-tVQ" userLabel="Menu">
                                 <rect key="frame" x="30" y="55.666666666666657" width="35" height="32.000000000000007"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="jq0-Iz-BWE"/>
                                     <constraint firstAttribute="width" constant="35" id="wLX-zf-t0h"/>
@@ -554,7 +555,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_birthday" translatesAutoresizingMaskIntoConstraints="NO" id="IY9-Ow-Uud">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Subscriptions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gjS-Ie-UrG">
                                 <rect key="frame" x="87.000000000000014" y="114" width="240.33333333333337" height="41"/>
@@ -674,20 +675,20 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="35Y-Kf-VKF" firstAttribute="centerX" secondItem="cx1-H3-WhE" secondAttribute="centerX" id="1sR-9k-O4l"/>
+                            <constraint firstItem="IY9-Ow-Uud" firstAttribute="leading" secondItem="cx1-H3-WhE" secondAttribute="leading" id="6cH-Ca-aOE"/>
                             <constraint firstItem="gjS-Ie-UrG" firstAttribute="top" secondItem="QQp-Xl-7fV" secondAttribute="top" constant="70" id="99Z-H4-gix">
                                 <variation key="heightClass=compact-widthClass=compact" constant="20"/>
                             </constraint>
-                            <constraint firstItem="IY9-Ow-Uud" firstAttribute="bottom" secondItem="QQp-Xl-7fV" secondAttribute="bottom" id="NyD-cq-IHQ"/>
-                            <constraint firstItem="IY9-Ow-Uud" firstAttribute="trailing" secondItem="QQp-Xl-7fV" secondAttribute="trailing" id="PtN-YH-dVq"/>
                             <constraint firstItem="35Y-Kf-VKF" firstAttribute="leading" secondItem="QQp-Xl-7fV" secondAttribute="leading" id="Rvs-av-Mum"/>
+                            <constraint firstItem="IY9-Ow-Uud" firstAttribute="top" secondItem="cx1-H3-WhE" secondAttribute="top" id="SSQ-kZ-fBC"/>
                             <constraint firstItem="QQp-Xl-7fV" firstAttribute="trailing" secondItem="35Y-Kf-VKF" secondAttribute="trailing" id="Sjw-6W-E2d"/>
+                            <constraint firstAttribute="bottom" secondItem="IY9-Ow-Uud" secondAttribute="bottom" id="YeH-w0-sdk"/>
                             <constraint firstItem="QQp-Xl-7fV" firstAttribute="trailing" secondItem="9hR-S4-Y4J" secondAttribute="trailing" constant="30" id="Yjw-2Y-lxp"/>
-                            <constraint firstItem="IY9-Ow-Uud" firstAttribute="leading" secondItem="QQp-Xl-7fV" secondAttribute="leading" id="etN-52-vlx"/>
+                            <constraint firstAttribute="trailing" secondItem="IY9-Ow-Uud" secondAttribute="trailing" id="gYf-rQ-08C"/>
                             <constraint firstItem="35Y-Kf-VKF" firstAttribute="centerY" secondItem="cx1-H3-WhE" secondAttribute="centerY" id="hpq-BW-WvJ"/>
                             <constraint firstItem="gjS-Ie-UrG" firstAttribute="centerX" secondItem="cx1-H3-WhE" secondAttribute="centerX" id="joI-c3-wl8"/>
                             <constraint firstItem="9hR-S4-Y4J" firstAttribute="top" secondItem="QQp-Xl-7fV" secondAttribute="top" constant="10" id="neR-Me-fqj"/>
                             <constraint firstItem="35Y-Kf-VKF" firstAttribute="top" secondItem="gjS-Ie-UrG" secondAttribute="bottom" constant="10" id="sWr-Gv-8wj"/>
-                            <constraint firstItem="IY9-Ow-Uud" firstAttribute="top" secondItem="QQp-Xl-7fV" secondAttribute="top" id="vuY-RX-bJB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QQp-Xl-7fV"/>
                     </view>
@@ -780,6 +781,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZAq-SC-th5" userLabel="Menu">
                                 <rect key="frame" x="30" y="55.666666666666657" width="35" height="32.000000000000007"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="35" id="JK9-nM-pbE"/>
                                     <constraint firstAttribute="height" constant="35" id="kXx-Tx-JH1"/>
@@ -787,6 +789,7 @@
                                 <color key="tintColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" backgroundImage="arrowshape.turn.up.left.fill" catalog="system"/>
                                 <connections>
+                                    <action selector="onReturn:" destination="tjK-xY-LB5" eventType="touchUpInside" id="xDq-9s-GWG"/>
                                     <action selector="onReturn:" destination="YM3-zv-dS4" eventType="touchUpInside" id="zPu-Fz-w3f"/>
                                 </connections>
                             </button>
@@ -852,10 +855,10 @@
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AHo-Tv-VxK" userLabel="Menu">
-                                <rect key="frame" x="324" y="53.666666666666657" width="60" height="34.333333333333336"/>
+                                <rect key="frame" x="349" y="53.666666666666657" width="35" height="34.333333333333336"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="fvJ-9d-Hau"/>
+                                    <constraint firstAttribute="width" constant="35" id="fvJ-9d-Hau"/>
                                     <constraint firstAttribute="height" constant="35" id="ylN-LN-86Q">
                                         <variation key="heightClass=regular-widthClass=regular" constant="60"/>
                                     </constraint>
@@ -892,10 +895,10 @@
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jEY-Ll-uAh" userLabel="Menu">
-                                <rect key="frame" x="30" y="55.666666666666657" width="60" height="32.000000000000007"/>
+                                <rect key="frame" x="30" y="55.666666666666657" width="35" height="32.000000000000007"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="Wqh-dl-QfA"/>
+                                    <constraint firstAttribute="width" constant="35" id="Wqh-dl-QfA"/>
                                     <constraint firstAttribute="height" constant="35" id="eBI-VV-oHw">
                                         <variation key="heightClass=regular-widthClass=regular" constant="60"/>
                                     </constraint>
@@ -1086,6 +1089,6 @@
         <segue reference="8lV-Uy-nFa"/>
         <segue reference="2dD-24-dkF"/>
         <segue reference="a4N-7o-TBa"/>
-        <segue reference="iZj-kp-u5R"/>
+        <segue reference="tcV-2L-nK0"/>
     </inferredMetricsTieBreakers>
 </document>

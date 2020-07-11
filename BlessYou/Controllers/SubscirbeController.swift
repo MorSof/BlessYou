@@ -33,6 +33,14 @@ class SubscirbeController: UIViewController {
         self.performSegue(withIdentifier: "HomeTransition", sender: self)
     }
     
+    @IBAction func onReturn(_ sender: UIButton) {
+        if let nav = self.navigationController {
+            nav.popViewController(animated: true)
+        } else {
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
+    
     //MARK: Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "DateTransition"){
