@@ -9,16 +9,7 @@
 import Foundation
 import UIKit
 
-class SubscriptionsCell: UITableViewCell, DeleteProtocol {
-    
-   
-    func onSubscriptionDeleteSuccess() {
-        
-    }
-    
-    func onFailure(error: Error?) {
-        
-    }
+class SubscriptionsCell: UITableViewCell {
     
 
     @IBOutlet weak var LBL_Name: UILabel!
@@ -31,13 +22,7 @@ class SubscriptionsCell: UITableViewCell, DeleteProtocol {
     var controller: subscriptionsController = subscriptionsController.init()
     
     @IBAction func onDelete(_ sender: UIButton?) {
-        print("simba index = \(birthdayIndex.row)")
-        controller.cells.remove(at: birthdayIndex.row)
-        controller.subscriptions.remove(at: birthdayIndex.row)
-        controller.TABLE_tabel.deleteRows(at: [birthdayIndex], with: .fade)
-        controller.refreshCellIndexes()
-        FireStore.deleteSubscriptions(deleteProtocol: self, documentId: birthdayDetails.documentId)
-        
+        controller.onDelete(birthdayIndex: birthdayIndex, birthdayDetails: birthdayDetails)
     
     }
     

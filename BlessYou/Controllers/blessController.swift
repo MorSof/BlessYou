@@ -31,7 +31,7 @@ class blessController: UIViewController, BlessProtocol {
     }
     
     func onFailure(error: Error?) {
-        
+        self.showToast(message: "Somthing went wrong!", font: .systemFont(ofSize: 12.0))
     }
     
     func generateWish(){

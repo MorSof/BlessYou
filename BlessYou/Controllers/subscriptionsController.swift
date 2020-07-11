@@ -9,7 +9,12 @@
 import UIKit
 import GoogleSignIn
 
-class subscriptionsController: UIViewController, UITableViewDelegate, UITableViewDataSource, SubscriptionsProtocol {
+class subscriptionsController: UIViewController, UITableViewDelegate, UITableViewDataSource, SubscriptionsProtocol, DeleteProtocol {
+    
+    func onSubscriptionDeleteSuccess() {
+        self.showToast(message: "Subscription has been Deleted!", font: .systemFont(ofSize: 12.0))
+    }
+    
   
     @IBOutlet weak var TABLE_tabel: UITableView!
     let cellReuseIdentifier = "subscriptions_cell"
@@ -60,7 +65,7 @@ class subscriptionsController: UIViewController, UITableViewDelegate, UITableVie
     }
       
     func onFailure(error: Error?) {
-          
+          self.showToast(message: "Somthing went wrong!", font: .systemFont(ofSize: 12.0))
     }
       
 
@@ -70,6 +75,26 @@ class subscriptionsController: UIViewController, UITableViewDelegate, UITableVie
     
     func onEdit(){
         self.performSegue(withIdentifier: "EditTransition", sender: self)
+    }
+    
+    func onDelete(birthdayIndex: IndexPath, birthdayDetails: BirthdayDetails){
+        let refreshAlert = UIAlertController(title: "Refresh", message: "Are You Sure You Want To Delete The Subscription?.", preferredStyle: UIAlertController.Style.alert)
+
+        refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+              print("Handle Ok logic here")
+            self.cells.remove(at: birthdayIndex.row)
+            self.subscriptions.remove(at: birthdayIndex.row)
+            self.TABLE_tabel.deleteRows(at: [birthdayIndex], with: .fade)
+            self.refreshCellIndexes()
+            FireStore.deleteSubscriptions(deleteProtocol: self, documentId: birthdayDetails.documentId)
+        }))
+
+        refreshAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+              print("Handle Cancel Logic here")
+        }))
+
+        present(refreshAlert, animated: true, completion: nil)
+        
     }
     
 

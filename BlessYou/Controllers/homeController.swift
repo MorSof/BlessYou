@@ -16,6 +16,7 @@ class homeController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
     
     @IBAction func didTapSignOut(_ sender: AnyObject) {
