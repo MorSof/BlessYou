@@ -12,6 +12,8 @@ import UIKit
 class TodayBirthdaysCell: UITableViewCell {
     
     @IBOutlet weak var LBL_Name: UILabel!
-    
+    @IBOutlet weak var IMG_left_img: UIImageView!
+    @IBOutlet weak var IMG_right_img: UIImageView!
+    @IBOutlet weak var LBL_type: UILabel!
 }
 

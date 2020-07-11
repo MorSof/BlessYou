@@ -30,6 +30,10 @@ class todayBirthdaysController: UIViewController, UITableViewDelegate, UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell : TodayBirthdaysCell? = self.TABLE_tabel.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as? TodayBirthdaysCell
          cell?.LBL_Name?.text = String(TodayBirthdays.todayBirthdays[indexPath.row].personName)
+        let image : UIImage = UIImage(named:"baloons1")!
+        cell?.IMG_left_img.image = image
+        cell?.IMG_right_img.image = image
+        cell?.LBL_type.text = String(TodayBirthdays.todayBirthdays[indexPath.row].type)
          if(cell == nil){
              cell = TodayBirthdaysCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: cellReuseIdentifier)
          }
