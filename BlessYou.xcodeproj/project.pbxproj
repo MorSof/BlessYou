@@ -14,6 +14,9 @@
 		DF53CC8924B87CEA0022A4BB /* deleteProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF53CC8824B87CEA0022A4BB /* deleteProtocol.swift */; };
 		DF5F9032249A61E7005288F6 /* userGoogle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5F9031249A61E7005288F6 /* userGoogle.swift */; };
 		DF5F9034249E4C5A005288F6 /* SubscirbeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5F9033249E4C5A005288F6 /* SubscirbeController.swift */; };
+		DF60C46524BA679500D8F04B /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF60C46424BA679500D8F04B /* SoundManager.swift */; };
+		DF60C46824BA683E00D8F04B /* happyBirthdayCheers.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF60C46724BA683E00D8F04B /* happyBirthdayCheers.mp3 */; };
+		DF60C46A24BA6E3800D8F04B /* trash.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF60C46924BA6E3800D8F04B /* trash.mp3 */; };
 		DF79196324AA3CFB0063DF12 /* MyNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF79196224AA3CFB0063DF12 /* MyNotification.swift */; };
 		DF79196A24AF17440063DF12 /* dateTimeUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF79196924AF17440063DF12 /* dateTimeUtil.swift */; };
 		DF79197324AF48960063DF12 /* signInProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF79197224AF48960063DF12 /* signInProtocol.swift */; };
@@ -67,6 +70,9 @@
 		DF53CC8824B87CEA0022A4BB /* deleteProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = deleteProtocol.swift; sourceTree = "<group>"; };
 		DF5F9031249A61E7005288F6 /* userGoogle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userGoogle.swift; sourceTree = "<group>"; };
 		DF5F9033249E4C5A005288F6 /* SubscirbeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscirbeController.swift; sourceTree = "<group>"; };
+		DF60C46424BA679500D8F04B /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
+		DF60C46724BA683E00D8F04B /* happyBirthdayCheers.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = happyBirthdayCheers.mp3; sourceTree = "<group>"; };
+		DF60C46924BA6E3800D8F04B /* trash.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = trash.mp3; sourceTree = "<group>"; };
 		DF79196224AA3CFB0063DF12 /* MyNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNotification.swift; sourceTree = "<group>"; };
 		DF79196924AF17440063DF12 /* dateTimeUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dateTimeUtil.swift; sourceTree = "<group>"; };
 		DF79197224AF48960063DF12 /* signInProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signInProtocol.swift; sourceTree = "<group>"; };
@@ -154,10 +160,20 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		DF60C46624BA67C000D8F04B /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				DF60C46924BA6E3800D8F04B /* trash.mp3 */,
+				DF60C46724BA683E00D8F04B /* happyBirthdayCheers.mp3 */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 		DF79196624AF16CA0063DF12 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
 				DF79196924AF17440063DF12 /* dateTimeUtil.swift */,
+				DF60C46424BA679500D8F04B /* SoundManager.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -239,6 +255,7 @@
 				DF79196824AF17010063DF12 /* Models */,
 				DF84975B24A1DAE30018348C /* DB */,
 				DF79196624AF16CA0063DF12 /* Utils */,
+				DF60C46624BA67C000D8F04B /* Sounds */,
 				DF8B71B0249A4048004F4751 /* AppDelegate.swift */,
 				DF8B71B2249A4048004F4751 /* SceneDelegate.swift */,
 				DF8B71B6249A4048004F4751 /* Main.storyboard */,
@@ -383,6 +400,8 @@
 				DF1EC964249E78B400ABDB88 /* GoogleService-Info.plist in Resources */,
 				DF8B71BA249A4049004F4751 /* Assets.xcassets in Resources */,
 				DF8B71B8249A4048004F4751 /* Main.storyboard in Resources */,
+				DF60C46824BA683E00D8F04B /* happyBirthdayCheers.mp3 in Resources */,
+				DF60C46A24BA6E3800D8F04B /* trash.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -557,6 +576,7 @@
 				DF79197724AF57A00063DF12 /* TodayBirthdaysCell.swift in Sources */,
 				DF79198324B07BE10063DF12 /* todayBirthdays.swift in Sources */,
 				DF79197B24AF6BF40063DF12 /* birthdayDetails.swift in Sources */,
+				DF60C46524BA679500D8F04B /* SoundManager.swift in Sources */,
 				DF79198924B09C320063DF12 /* subscriptionsController.swift in Sources */,
 				DF53CC8924B87CEA0022A4BB /* deleteProtocol.swift in Sources */,
 				DF79197D24B0543B0063DF12 /* blessController.swift in Sources */,

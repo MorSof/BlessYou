@@ -18,6 +18,7 @@ class todayBirthdaysController: UIViewController, UITableViewDelegate, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        SoundManager.playSound(.happyBirthdayCheers)
         TABLE_tabel.delegate = self
         TABLE_tabel.dataSource = self
     }

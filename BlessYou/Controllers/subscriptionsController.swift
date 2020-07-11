@@ -69,15 +69,17 @@ class subscriptionsController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func onDelete(birthdayIndex: IndexPath, birthdayDetails: BirthdayDetails){
-        let refreshAlert = UIAlertController(title: "Refresh", message: "Are You Sure You Want To Delete The Subscription?.", preferredStyle: UIAlertController.Style.alert)
+        let refreshAlert = UIAlertController(title: "Are You Sure?", message: "Are You Sure You Want To Delete The Subscription?.", preferredStyle: UIAlertController.Style.alert)
 
         refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+            Notification.deleteNotification(notificationId: self.subscriptions[birthdayIndex.row].notificationId)
             self.cells.remove(at: birthdayIndex.row)
             self.subscriptions.remove(at: birthdayIndex.row)
             self.TABLE_tabel.deleteRows(at: [birthdayIndex], with: .fade)
-            self.refreshCellIndexes()
+            SoundManager.playSound(.trash)
             FireStore.deleteSubscriptions(deleteProtocol: self, documentId: birthdayDetails.documentId)
-            Notification.deleteNotification(notificationId: self.subscriptions[birthdayIndex.row].notificationId)
+            self.refreshCellIndexes()
+
         }))
 
         refreshAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
