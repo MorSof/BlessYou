@@ -21,7 +21,8 @@ class FireStore{
             "personName" : bithdayDetails.personName,
             "dateOfBirth": bithdayDetails.dateOfBirth,
             "type": bithdayDetails.type,
-            "dateOfBirthMonthDay" : bithdayDetails.monthDayDateStr
+            "dateOfBirthMonthDay" : bithdayDetails.monthDayDateStr,
+            "notificationId" : bithdayDetails.notificationId
         ])
         return documentId
     }
@@ -36,7 +37,7 @@ class FireStore{
             if error == nil && snapshot?.documents != nil {
                 for document in snapshot!.documents{
                     let documentData = document.data()
-                    let birthday = BirthdayDetails.init(personName: documentData["personName"] as! String, dateOfBirth: documentData["dateOfBirth"]! as! String, monthDayDateStr: documentData["dateOfBirthMonthDay"] as! String, type: documentData["type"]! as! String, documentId: document.documentID)
+                    let birthday = BirthdayDetails.init(personName: documentData["personName"] as! String, dateOfBirth: documentData["dateOfBirth"]! as! String, monthDayDateStr: documentData["dateOfBirthMonthDay"] as! String, type: documentData["type"]! as! String, documentId: document.documentID, notificationId: documentData["notificationId"] as! String)
                     todayBirthdays.append(birthday)
                 }
             }
@@ -67,7 +68,7 @@ class FireStore{
             if error == nil && snapshot?.documents != nil {
                 for document in snapshot!.documents{
                     let documentData = document.data()
-                    let birthday = BirthdayDetails.init(personName: documentData["personName"] as! String, dateOfBirth: documentData["dateOfBirth"]! as! String, monthDayDateStr: documentData["dateOfBirthMonthDay"] as! String, type: documentData["type"]! as! String, documentId: document.documentID)
+                    let birthday = BirthdayDetails.init(personName: documentData["personName"] as! String, dateOfBirth: documentData["dateOfBirth"]! as! String, monthDayDateStr: documentData["dateOfBirthMonthDay"] as! String, type: documentData["type"]! as! String, documentId: document.documentID, notificationId: documentData["notificationId"] as! String)
                     subscriptions.append(birthday)
                 }
             }

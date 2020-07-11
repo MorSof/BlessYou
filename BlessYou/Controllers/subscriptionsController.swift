@@ -11,11 +11,7 @@ import GoogleSignIn
 
 class subscriptionsController: UIViewController, UITableViewDelegate, UITableViewDataSource, SubscriptionsProtocol, DeleteProtocol {
     
-    func onSubscriptionDeleteSuccess() {
-        self.showToast(message: "Subscription has been Deleted!", font: .systemFont(ofSize: 12.0))
-    }
     
-  
     @IBOutlet weak var TABLE_tabel: UITableView!
     let cellReuseIdentifier = "subscriptions_cell"
     var subscriptions: Array<BirthdayDetails> = []
@@ -64,11 +60,6 @@ class subscriptionsController: UIViewController, UITableViewDelegate, UITableVie
         DispatchQueue.main.async { self.TABLE_tabel.reloadData() }
     }
       
-    func onFailure(error: Error?) {
-          self.showToast(message: "Somthing went wrong!", font: .systemFont(ofSize: 12.0))
-    }
-      
-
     @IBAction func goHome(_ sender: UIButton) {
         self.performSegue(withIdentifier: "HomeTransition", sender: self)
     }
@@ -81,12 +72,12 @@ class subscriptionsController: UIViewController, UITableViewDelegate, UITableVie
         let refreshAlert = UIAlertController(title: "Refresh", message: "Are You Sure You Want To Delete The Subscription?.", preferredStyle: UIAlertController.Style.alert)
 
         refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
-              print("Handle Ok logic here")
             self.cells.remove(at: birthdayIndex.row)
             self.subscriptions.remove(at: birthdayIndex.row)
             self.TABLE_tabel.deleteRows(at: [birthdayIndex], with: .fade)
             self.refreshCellIndexes()
             FireStore.deleteSubscriptions(deleteProtocol: self, documentId: birthdayDetails.documentId)
+            Notification.deleteNotification(notificationId: self.subscriptions[birthdayIndex.row].notificationId)
         }))
 
         refreshAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
@@ -97,12 +88,27 @@ class subscriptionsController: UIViewController, UITableViewDelegate, UITableVie
         
     }
     
+    func onSubscriptionDeleteSuccess() {
+        self.showToast(message: "Subscription has been Deleted!", font: .systemFont(ofSize: 12.0))
+    }
+    
+    func onFailureDelete(error: Error?) {
+        self.showToast(message: "Somthing went wrong!", font: .systemFont(ofSize: 12.0))
+
+    }
+    
+    func onFailure(error: Error?) {
+        self.showToast(message: "Somthing went wrong!", font: .systemFont(ofSize: 12.0))
+
+    }
 
     //MARK: Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "EditTransition"){
             let vc = segue.destination as! SubscirbeController
             vc.birthdayToEdit = selectedBirthday
+            vc.headline = "Edit a Birthday"
+
         }
     }
 }

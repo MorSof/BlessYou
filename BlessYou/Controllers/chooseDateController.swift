@@ -16,12 +16,15 @@ class chooseDateController: UIViewController {
     var fullDateStr: String! = ""
     var monthDayDateStr: String! = ""
     var birthdayToEdit: BirthdayDetails?
-
+    var headline: String?
+    
     @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var LBL_title: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        LBL_title.text = headline
     datePicker.maximumDate = Calendar.current.date(byAdding: .day, value: 0, to: Date())
     }
     
@@ -61,7 +64,7 @@ class chooseDateController: UIViewController {
             vc.fullDateStr = fullDateStr
             vc.monthDayDateStr = monthDayDateStr
             vc.birthdayToEdit = birthdayToEdit
-
+            vc.headline = headline
            }
        }
 

@@ -16,7 +16,7 @@ class SubscriptionsCell: UITableViewCell {
     @IBOutlet weak var LBL_Date: UILabel!
     @IBOutlet weak var LBL_Type: UILabel!
     
-    var birthdayDetails: BirthdayDetails = BirthdayDetails.init(personName: "", dateOfBirth: "", monthDayDateStr: "", type: "", documentId: "")
+    var birthdayDetails: BirthdayDetails = BirthdayDetails.init(personName: "", dateOfBirth: "", monthDayDateStr: "", type: "", documentId: "", notificationId: "")
     
     var birthdayIndex: IndexPath = IndexPath.init()
     var controller: subscriptionsController = subscriptionsController.init()

@@ -18,15 +18,18 @@ class chooseTypeController: UIViewController, UIPickerViewDelegate, UIPickerView
     var birthdayToEdit: BirthdayDetails?
 
     var notification: Notification?
+    var headline: String?
 
     @IBOutlet weak var picker: UIPickerView!
     @IBOutlet weak var BTN_submit: UIButton!
+    @IBOutlet weak var LBL_title: UILabel!
     
     var pickerData: [String] = [String]()
     var selectedType: String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        LBL_title.text = headline
         let buttonName = birthdayToEdit?.documentId == "" ? "Submit" : "Finish Editing"
         BTN_submit.setTitle(buttonName, for: .normal)
         self.picker.delegate = self
@@ -57,14 +60,19 @@ class chooseTypeController: UIViewController, UIPickerViewDelegate, UIPickerView
 
     @IBAction func onSubscribe(_ sender: Any) {
         
-        notification = Notification()
-        notification?.setContent(title: "Wish \(String(personName)) Happy Birthday!", subtitle: "Check out the generated wish")
-        notification?.trigger(month: dateDict["year"]!, day: dateDict["day"]!)
-        let bithdayDetails = BirthdayDetails.init(personName: String(personName), dateOfBirth: fullDateStr, monthDayDateStr: monthDayDateStr, type: selectedType, documentId: self.birthdayToEdit!.documentId)
+        let notificationId = setNotification()
+        let bithdayDetails = BirthdayDetails.init(personName: String(personName), dateOfBirth: fullDateStr, monthDayDateStr: monthDayDateStr, type: selectedType, documentId: self.birthdayToEdit!.documentId, notificationId: notificationId)
         bithdayDetails.documentId = FireStore.saveSubscription(bithdayDetails: bithdayDetails)
         todayBirthdayLogic(bithdayDetails: bithdayDetails)
         self.showToast(message: "Subscription has been set!", font: .systemFont(ofSize: 12.0))
         goToSubscriptions()
+    }
+    
+    func setNotification() -> String{
+        notification = Notification()
+        notification?.setContent(title: "Wish \(String(personName)) Happy Birthday!", subtitle: "Check out the generated wish")
+        let notificationId = notification?.trigger(month: dateDict["month"]!, day: dateDict["day"]!)
+        return notificationId!
     }
     
     func todayBirthdayLogic(bithdayDetails: BirthdayDetails){

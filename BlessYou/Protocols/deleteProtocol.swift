@@ -12,5 +12,5 @@ protocol DeleteProtocol {
     
     func onSubscriptionDeleteSuccess()
 
-    func onFailure(error: Error?)
+    func onFailureDelete(error: Error?)
 }

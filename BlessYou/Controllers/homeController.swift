@@ -51,7 +51,8 @@ class homeController: UIViewController {
     //MARK: Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "SubscribeTransition"){
-            
+            let vc = segue.destination as! SubscirbeController
+            vc.headline = "Subscribe a Birthday"
         }
     }
     

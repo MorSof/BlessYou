@@ -33,7 +33,7 @@ class Notification {
         content.subtitle = subtitle
     }
     
-    func trigger(month: Int, day: Int){
+    func trigger(month: Int, day: Int) -> String {
         // show this notification five seconds from now
 //        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 20, repeats: false)
         // choose a random identifier
@@ -42,15 +42,24 @@ class Notification {
 //        UNUserNotificationCenter.current().add(request)
         
         var dateComponents = DateComponents()
-        dateComponents.calendar = Calendar.current
+        dateComponents.calendar = Calendar(identifier: .gregorian)
+        print("month = \(month) ----- day = \(day)")
         dateComponents.month = month
         dateComponents.day = day
-        dateComponents.hour = 10
-        dateComponents.minute = 30
+        dateComponents.hour = 14
+        dateComponents.minute = 14
+        
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
-        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+        let notificationId = UUID().uuidString
+        let request = UNNotificationRequest(identifier: notificationId, content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request)
 
+        return notificationId
+    }
+    
+    public static func deleteNotification(notificationId: String){
+        let notificationCenter = UNUserNotificationCenter.current()
+        notificationCenter.removePendingNotificationRequests(withIdentifiers: [notificationId])
     }
     
 }
