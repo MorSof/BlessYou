@@ -11,6 +11,7 @@
 		9B0BF0519843D6460E0ABC7D /* Pods_BlessYou.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44ABC0B3DB5FBB3A6DB981AF /* Pods_BlessYou.framework */; };
 		DC8D9E876889342167DB3213 /* Pods_BlessYou_BlessYouUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BBF212421DE0F66146D5A54 /* Pods_BlessYou_BlessYouUITests.framework */; };
 		DF1EC964249E78B400ABDB88 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DF1EC963249E78B400ABDB88 /* GoogleService-Info.plist */; };
+		DF38C95024C1B41B00C9888A /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF38C94F24C1B41B00C9888A /* Spinner.swift */; };
 		DF53CC8924B87CEA0022A4BB /* deleteProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF53CC8824B87CEA0022A4BB /* deleteProtocol.swift */; };
 		DF5F9032249A61E7005288F6 /* userGoogle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5F9031249A61E7005288F6 /* userGoogle.swift */; };
 		DF5F9034249E4C5A005288F6 /* SubscirbeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5F9033249E4C5A005288F6 /* SubscirbeController.swift */; };
@@ -67,6 +68,7 @@
 		3BBF212421DE0F66146D5A54 /* Pods_BlessYou_BlessYouUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlessYou_BlessYouUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		44ABC0B3DB5FBB3A6DB981AF /* Pods_BlessYou.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlessYou.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF1EC963249E78B400ABDB88 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DF38C94F24C1B41B00C9888A /* Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
 		DF53CC8824B87CEA0022A4BB /* deleteProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = deleteProtocol.swift; sourceTree = "<group>"; };
 		DF5F9031249A61E7005288F6 /* userGoogle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userGoogle.swift; sourceTree = "<group>"; };
 		DF5F9033249E4C5A005288F6 /* SubscirbeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscirbeController.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 			children = (
 				DF79196924AF17440063DF12 /* dateTimeUtil.swift */,
 				DF60C46424BA679500D8F04B /* SoundManager.swift */,
+				DF38C94F24C1B41B00C9888A /* Spinner.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -570,6 +573,7 @@
 				DF5F9034249E4C5A005288F6 /* SubscirbeController.swift in Sources */,
 				DF79197924AF596B0063DF12 /* todayBirthdaysController.swift in Sources */,
 				DF79197F24B0635E0063DF12 /* blessProtocol.swift in Sources */,
+				DF38C95024C1B41B00C9888A /* Spinner.swift in Sources */,
 				DF8B71B5249A4048004F4751 /* signInController.swift in Sources */,
 				DF79196324AA3CFB0063DF12 /* MyNotification.swift in Sources */,
 				DF8B71B1249A4048004F4751 /* AppDelegate.swift in Sources */,

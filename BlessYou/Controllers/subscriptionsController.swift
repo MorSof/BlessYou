@@ -22,6 +22,7 @@ class subscriptionsController: UIViewController, UITableViewDelegate, UITableVie
         super.viewDidLoad()
         TABLE_tabel.delegate = self
         TABLE_tabel.dataSource = self
+        self.showSpinner()
         FireStore.fetchUserSubscriptions(subscriptionsController: self)
     }
     
@@ -56,6 +57,7 @@ class subscriptionsController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func onFetchedSubscriptionsSuccess(subscriptions: Array<BirthdayDetails>) {
+        self.removeSpinner()
         self.subscriptions = subscriptions
         DispatchQueue.main.async { self.TABLE_tabel.reloadData() }
     }
@@ -77,6 +79,7 @@ class subscriptionsController: UIViewController, UITableViewDelegate, UITableVie
             self.subscriptions.remove(at: birthdayIndex.row)
             self.TABLE_tabel.deleteRows(at: [birthdayIndex], with: .fade)
             SoundManager.playSound(.trash)
+            self.showSpinner()
             FireStore.deleteSubscriptions(deleteProtocol: self, documentId: birthdayDetails.documentId)
             self.refreshCellIndexes()
 
@@ -91,15 +94,18 @@ class subscriptionsController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func onSubscriptionDeleteSuccess() {
+        self.removeSpinner()
         self.showToast(message: "Subscription has been Deleted!", font: .systemFont(ofSize: 12.0))
     }
     
     func onFailureDelete(error: Error?) {
+        self.removeSpinner()
         self.showToast(message: "Somthing went wrong!", font: .systemFont(ofSize: 12.0))
 
     }
     
     func onFailure(error: Error?) {
+        self.removeSpinner()
         self.showToast(message: "Somthing went wrong!", font: .systemFont(ofSize: 12.0))
 
     }
