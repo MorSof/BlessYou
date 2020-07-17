@@ -11,8 +11,6 @@ import GoogleSignIn
 import GoogleSignIn
 
 class signInController: UIViewController, GIDSignInDelegate, SignInProtocol {
-
-//    var birthdaysArr: Array<BirthdayDetails> = []
     
     @IBOutlet weak var BTN_sign_in: GIDSignInButton!
     
@@ -42,7 +40,8 @@ class signInController: UIViewController, GIDSignInDelegate, SignInProtocol {
     //---------------------Google sign in-----------------------------
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!,
               withError error: Error!) {
-      if let error = error {
+        if let error = error {
+        self.removeSpinner()
         if (error as NSError).code == GIDSignInErrorCode.hasNoAuthInKeychain.rawValue {
           print("The user has not signed in before or they have since signed out.")
         } else {
@@ -50,7 +49,6 @@ class signInController: UIViewController, GIDSignInDelegate, SignInProtocol {
         }
         return
       }
-
         UserGoogle.userId = user.userID                  // For client-side use only!
         UserGoogle.idToken = user.authentication.idToken // Safe to send to the server
         UserGoogle.fullName = user.profile.name
@@ -58,6 +56,7 @@ class signInController: UIViewController, GIDSignInDelegate, SignInProtocol {
         UserGoogle.familyName = user.profile.familyName
         UserGoogle.email = user.profile.email
         print(UserGoogle.familyName)
+        self.showSpinner()
         FireStore.fetchTodayBirthdays(signInController: self)
         
     }
@@ -71,7 +70,6 @@ class signInController: UIViewController, GIDSignInDelegate, SignInProtocol {
     
     
     //------------------------------------------------------------------
-    
     
     
     func onFetchedBirthdaysSuccess(birthdaysArr: Array<BirthdayDetails>) {
@@ -104,12 +102,8 @@ class signInController: UIViewController, GIDSignInDelegate, SignInProtocol {
     
     //MARK: Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if(segue.identifier == "TodayBirthdayTransition"){
-//            let vc = segue.destination as! todayBirthdaysController
-//            vc.birthdaysArr = self.birthdaysArr
-        }
+        self.removeSpinner()
     }
-    
 }
 
 extension UIViewController {

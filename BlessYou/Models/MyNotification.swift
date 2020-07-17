@@ -12,6 +12,9 @@ import UserNotifications
 class Notification {
     
     var content = UNMutableNotificationContent()
+    final var NOTIFY_HOUR = 15
+    final var NOTIFY_MINUTES = 14
+
     
     init() {
         requestAuthorization()
@@ -46,8 +49,8 @@ class Notification {
         print("month = \(month) ----- day = \(day)")
         dateComponents.month = month
         dateComponents.day = day
-        dateComponents.hour = 14
-        dateComponents.minute = 14
+        dateComponents.hour = NOTIFY_HOUR
+        dateComponents.minute = NOTIFY_MINUTES
         
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
         let notificationId = UUID().uuidString
